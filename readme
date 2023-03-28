@@ -1,0 +1,20 @@
+python -m venv env
+env\Scripts\activate
+pip install django
+pip install djangorestframework
+
+
+django-admin startproject incomeexpensesapi
+python manage.py startapp authentication
+
+python manage.py createsuperuser --email g.sateesh536@gmail.com --username sateesh
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+delete users:
+--------------
+    python manage.py shell
+    from authentication.models import User
+    User.objects.all().delete()
